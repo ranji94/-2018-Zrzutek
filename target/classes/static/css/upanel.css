@@ -1,0 +1,54 @@
+.body
+{
+    margin: 0 auto;
+    font-family: 'Lato', sans-serif;
+}
+
+.naglowek
+{
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #7eddf7;
+    font-family: 'Lobster', cursive;
+    color: #ff8c00;
+    font-size: 60px;
+    font-style: italic;
+    letter-spacing: 10px;
+}
+
+.status
+{
+    font-family: 'Lato', sans-serif;
+    background-color: #fffdad;
+    padding-right: 20px;
+}
+
+.glowna
+{
+    padding-top: 10px;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+}
+
+.formularzproduktu
+{
+    padding: 20px 20px 20px 20px;
+    background-color: #fffdad;
+    margin: 10px 10%;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.lista
+{
+	padding: 20px 20px 20px 20px;
+	margin: 10px 10%;
+	text-align:center;
+	border-radius: 5px;
+}
+
+label
+{
+    padding-left: 10px;
+}

@@ -1,0 +1,21 @@
+body
+{
+	background-color: #282823;
+	background-image: url("colorbg.png");
+	background-repeat: no-repeat;
+	bakground-position: center;
+	margin: 0 auto;
+}
+
+.loginform
+{
+	border: 2px solid #e2e2c5;
+	border-radius: 4px;
+	background-color: #eafdff;
+	width: 30%;
+	margin: 10% auto;
+	text-align:center;
+	justify-content: center;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
