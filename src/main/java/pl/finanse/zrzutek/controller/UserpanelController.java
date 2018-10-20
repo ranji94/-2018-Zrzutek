@@ -24,6 +24,7 @@ public class UserpanelController {
 	public String formularz(Model model)
 	{
 		model.addAttribute("shopping", new ShoppingList());
+		model.addAttribute("currentuser", shoppingListService.getCurrentUser());
 		model.addAttribute("shoppinglist", shoppingListService.getAllShoppingList());
 		return "shoppinglist";
 	}

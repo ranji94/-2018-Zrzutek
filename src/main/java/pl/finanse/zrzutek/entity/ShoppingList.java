@@ -26,6 +26,8 @@ public class ShoppingList {
 	private float product_price;
 	@Column(name="QUANTITY")
 	private long quantity;
+	@Column(name="OWNER")
+	private String owner;
 	
 	public Date getDate() {
 		return date;
@@ -64,6 +66,13 @@ public class ShoppingList {
 	}
 	public void setProduct_price(float product_price) {
 		this.product_price = product_price;
+	}
+	
+	public String getOwner() {
+		return owner;
+	}
+	public void setOwner(String owner) {
+		this.owner = owner;
 	}
 	
 	

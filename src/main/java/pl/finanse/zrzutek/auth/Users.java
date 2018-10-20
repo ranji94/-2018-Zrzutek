@@ -1,4 +1,4 @@
-package pl.finanse.zrzutek.entity;
+package pl.finanse.zrzutek.auth;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,26 +8,16 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="USER")
-public class User {
+@Table(name="USERS")
+public class Users {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="USER_ID")
 	private long id;
-	@Column(name="NAME")
-	private String name;
-	@Column(name="EMAIL")
-	private String email;
+	@Column(name="USERNAME", nullable =false, unique = true)
+	private String username;
 	@Column(name="PASSWORD")
 	private String password;
-	
-	public User(long id, String name, String email, String password) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.email = email;
-		this.password = password;
-	}
 	
 	public long getId() {
 		return id;
@@ -35,17 +25,11 @@ public class User {
 	public void setId(long id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+	public String getUsername() {
+		return username;
 	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	public String getPassword() {
 		return password;
@@ -53,5 +37,6 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
 	
 }

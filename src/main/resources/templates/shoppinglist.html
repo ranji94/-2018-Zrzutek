@@ -16,8 +16,8 @@
 </head>
 <body>
 	<div class="naglowek">ZRZUTEK</div>
-    <div class="status" style="text-align: right;">
-    Witaj, USER
+    <div class="status">
+    <span style="text-align: left;">Witaj,</span><span style="text-align: left;" th:text="${currentuser}"></span> <span style="text-align: right;">Aby wylogować aktywnego użytkownika kliknij <a href="/logout">tutaj</a>.</span>
     </div>
     <div class="glowna">
         <h1>Dodaj produkt do bazy:</h1>

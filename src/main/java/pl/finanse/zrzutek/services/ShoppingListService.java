@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import pl.finanse.zrzutek.entity.Product;
@@ -30,13 +32,21 @@ public class ShoppingListService {
 		product.setShop(shoppingList.getProduct_shop());
 		productService.addProduct(product);
 		shoppingList.setDate();
+		shoppingList.setOwner(getCurrentUser());
 		this.shoppingListRepository.save(shoppingList);
 	}
 	
 	public List<ShoppingList> getAllShoppingList()
 	{
 		List<ShoppingList> shopping = new ArrayList<>();
-		this.shoppingListRepository.findAll().forEach(shopping::add);
+		this.shoppingListRepository.findByOwner(getCurrentUser()).forEach(shopping::add);
 		return shopping;
+	}
+	
+	public String getCurrentUser()
+	{
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		String currentPrincipalName = authentication.getName();
+		return currentPrincipalName;
 	}
 }
