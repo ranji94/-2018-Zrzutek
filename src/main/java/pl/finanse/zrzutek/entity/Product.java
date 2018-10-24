@@ -16,7 +16,7 @@ public class Product {
 	@Column(name="NAME")
 	private String name;
 	@Column(name="PRICE")
-	private float price;
+	private String price;
 	@Column(name="SHOP")
 	private String shop;
 	
@@ -32,10 +32,10 @@ public class Product {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public float getPrice() {
+	public String getPrice() {
 		return price;
 	}
-	public void setPrice(float price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
 	public String getShop() {

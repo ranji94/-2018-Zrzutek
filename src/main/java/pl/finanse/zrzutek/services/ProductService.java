@@ -36,11 +36,11 @@ public class ProductService {
 	
 	public float getTotal()
 	{
-		List<Product> products = this.getAllProducts();
+		//List<Product> products = this.getAllProducts();
 		float total=0.0F;
 		for(int i=0;i<this.productRepository.count();i++)
 		{
-			total+=products.get(i).getPrice();
+			//total+=products.get(i).getPrice();
 		}
 		return (float) (Math.round(total*100.0)/100.0);
 	}

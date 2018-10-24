@@ -1,10 +1,11 @@
 package pl.finanse.zrzutek.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import pl.finanse.zrzutek.auth.Users;
@@ -21,16 +22,22 @@ public class RegistrationController {
 	}
 
 	@GetMapping("/registration")
-	public String formularz(Model model)
+	public String formularz(Users users)
 	{
-		model.addAttribute("newuser", new Users());
 		return "registration";
 	}
 
 	@PostMapping("/registration")
-	public String productSubmit(@ModelAttribute Users user)
+	public String productSubmit(@Valid Users users, BindingResult bindingResult)
 	{
-		this.usersRepository.save(user);
-		return "regsuccess";
+		if(bindingResult.hasErrors())
+		{
+			return "registration";
+		}
+		else
+		{
+			this.usersRepository.save(users);
+			return "regsuccess";
+		}
 	}
 }

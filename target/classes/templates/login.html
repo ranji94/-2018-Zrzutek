@@ -18,6 +18,7 @@
 </head>
 <body>
 	<div class="loginform">
+	<h3>Formularz logowania:</h3>
 	<form th:action="@{/login}" method="post">
 		<div><label>Nazwa użytkownika : <input type="text" class="form-control" name="username"/></label></div>
 		<div><label>Hasło: <input type="password" class="form-control" name="password"/></label></div>
@@ -29,6 +30,9 @@
 	<div th:if="${param.error}" style="color: red;">
 		Nastąpiło wylogowanie.
 	</div>
+	
+	Nie masz jeszcze konta użytkownika? <a href="/registration">Załóż je!</a>
+	
 	</div>
 </body>
 </html>

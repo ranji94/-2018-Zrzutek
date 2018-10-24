@@ -19,13 +19,19 @@
 <body>
 	<div class="regform">
 	<h3>Formularz rejestracji</h3>
-	<form action="#" th:action="@{/registration}" method="post">
+	<form action="#" th:action="@{/registration}" th:object="${users}" method="post">
                 <div class="form-group"><label for="name">Nazwa użytkownika: </label>
-                <input type="text" th:field="${newuser.username}" class="form-control" id="name" placeholder="Nazwa użytkownika"/></div>
+                <input type="text" th:field="*{username}" class="form-control" id="name" placeholder="Nazwa użytkownika"/>
+                <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Username Error</span></div>
                 <div class="form-group"><label for="pass">Hasło:</label>
-                <input type="password" th:field="${newuser.password}" class="form-control" id="pass" placeholder="Hasło"/></div>
+                <input type="password" th:field="*{password}" class="form-control" id="pass" placeholder="Hasło"/>
+                <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</span></div>
+                <div class="form-group"><label for="pass">Potwierdz hasło:</label>
+                <input type="password" th:field="*{confirmpassword}" class="form-control" id="pass" placeholder="Hasło"/>
+                Obydwa hasła muszą być zgodne.</div>
                 <div><input type="submit" value="Dodaj"/></div>
     </form>
+    Powrót do strony <a href="/">logowania</a>.
 	</div>
 </body>
 </html>
